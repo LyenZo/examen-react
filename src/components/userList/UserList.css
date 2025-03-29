@@ -1,62 +1,106 @@
 /* Estilos generales */
 .user-list-container {
-    background-color: #f0f8ff; /* Fondo azul claro */
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 600px;
-    margin: 40px auto;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f4f7fa; /* Fondo gris claro */
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 750px;
+    margin: 50px auto;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
 }
 
 /* Botones */
 button {
-    background-color: #1e90ff; /* Azul brillante */
+    background-color: #4CAF50; /* Verde brillante */
     color: white;
-    padding: 10px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 5px;
-    margin: 10px 0;
+    border-radius: 8px;
+    margin: 12px 0;
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
 button:hover {
-    background-color: #4682b4; /* Azul más oscuro al pasar el ratón */
+    background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de agrandar el botón */
 }
 
 /* Lista de usuarios */
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 20px 0;
 }
 
 li {
-    background-color: #e6f7ff; /* Fondo azul claro para cada elemento */
-    margin: 10px 0;
-    padding: 12px;
-    border-radius: 5px;
+    background-color: #ffffff; /* Fondo blanco */
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+li:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Sombra más grande al pasar el ratón */
 }
 
 /* Nombre y correo de usuario */
 li span {
-    color: #1e90ff; /* Azul brillante para el nombre */
+    color: #333; /* Color oscuro para el texto */
     font-weight: bold;
+    font-size: 16px;
 }
 
 /* Estilos del formulario (cuando se muestra) */
 form {
     background-color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
 }
 
 /* Título del formulario */
 form h2 {
     text-align: center;
-    color: #1e90ff;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+/* Paginación */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #007bff; /* Azul brillante */
+    color: white;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+}
+
+.pagination button:disabled {
+    background-color: #dcdcdc; /* Gris cuando el botón está deshabilitado */
+    cursor: not-allowed;
+}
+
+/* Estilo para el botón activo de paginación */
+.pagination button.active {
+    background-color: #28a745;
 }

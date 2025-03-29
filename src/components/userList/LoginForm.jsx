@@ -92,6 +92,11 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
             <button onClick={() => navigate('/user-form')} className="redirect-button">
                 Ir a User Form
             </button>
+
+            {/* Nuevo botón para redirigir a la documentación de la API */}
+            <button onClick={() => window.location.href = 'https://18.212.243.73/apidocs/'} className="redirect-button">
+                Ver Documentación API
+            </button>
         </div>
     );
 };
