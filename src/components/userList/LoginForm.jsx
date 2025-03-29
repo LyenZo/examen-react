@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify'; // Importamos toast
+import './style.css'; // Importamos la hoja de estilos
 
 const LoginForm = ({ onLoginSuccess, onLogout }) => {
     const [email, setEmail] = useState('');
@@ -16,7 +17,7 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
         }
 
         try {
-            const response = await fetch('http://34.202.231.19//users/login', {
+            const response = await fetch('https://18.212.243.73/users/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -50,17 +51,17 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
     };
 
     return (
-        <div>
+        <div className="container">
             <h2>{isLoggedIn ? 'Bienvenido!' : 'Iniciar Sesión'}</h2>
 
             {isLoggedIn && (
                 <>
-                    <p style={{ color: 'green' }}>¡Sesión iniciada correctamente!</p>
+                    <p className="success">¡Sesión iniciada correctamente!</p>
                     <button onClick={handleLogout}>Cerrar sesión</button>
                 </>
             )}
 
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {error && <p>{error}</p>}
 
             {!isLoggedIn && (
                 <form onSubmit={handleSubmit}>

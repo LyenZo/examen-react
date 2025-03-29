@@ -1,0 +1,62 @@
+/* Estilos generales */
+.user-list-container {
+    background-color: #f0f8ff; /* Fondo azul claro */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones */
+button {
+    background-color: #1e90ff; /* Azul brillante */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4682b4; /* Azul más oscuro al pasar el ratón */
+}
+
+/* Lista de usuarios */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    background-color: #e6f7ff; /* Fondo azul claro para cada elemento */
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Nombre y correo de usuario */
+li span {
+    color: #1e90ff; /* Azul brillante para el nombre */
+    font-weight: bold;
+}
+
+/* Estilos del formulario (cuando se muestra) */
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+form h2 {
+    text-align: center;
+    color: #1e90ff;
+}
