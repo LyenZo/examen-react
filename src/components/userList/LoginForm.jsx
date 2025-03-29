@@ -54,7 +54,7 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
 
     return (
         <div className="container">
-            <h2>{isLoggedIn ? 'Bienvenidos!' : 'Iniciar Sesión'}</h2>
+            <h2>{isLoggedIn ? 'Bienvenidos!' : 'Iniciar Sesiónes'}</h2>
 
             {isLoggedIn && (
                 <>
