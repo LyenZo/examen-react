@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import { toast } from 'react-toastify'; // Importamos toast
-import './style.css'; // Importamos la hoja de estilos
+import { useNavigate } from 'react-router-dom'; // Importamos useNavigate
+import { toast } from 'react-toastify';
+import './style.css';
 
 const LoginForm = ({ onLoginSuccess, onLogout }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate(); // Hook para la navegación
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -29,15 +31,15 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
                 const data = await response.json();
                 setIsLoggedIn(true);
                 onLoginSuccess(data.access_token);
-                toast.success('¡Login exitoso!'); // Mostrar notificación de éxito
+                toast.success('¡Login exitoso!');
             } else {
                 setError('Credenciales incorrectas. Intenta de nuevo.');
-                toast.error('Credenciales incorrectas'); // Notificación de error
+                toast.error('Credenciales incorrectas');
                 setIsLoggedIn(false);
             }
         } catch (err) {
             setError('Hubo un problema al intentar iniciar sesión.');
-            toast.error('Hubo un problema al intentar iniciar sesión.'); // Notificación de error
+            toast.error('Hubo un problema al intentar iniciar sesión.');
             setIsLoggedIn(false);
         }
     };
@@ -86,6 +88,10 @@ const LoginForm = ({ onLoginSuccess, onLogout }) => {
                     <button type="submit">Iniciar sesión</button>
                 </form>
             )}
+
+            <button onClick={() => navigate('/user-form')} className="redirect-button">
+                Ir a User Form
+            </button>
         </div>
     );
 };

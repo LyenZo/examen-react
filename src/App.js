@@ -51,11 +51,8 @@ const App = () => {
                         }
                     />
 
-                    {/* Ruta para UserForm, solo accesible si hay token */}
-                    <Route
-                        path="/user-form"
-                        element={access_token ? <UserForm /> : <Navigate to="/" />}
-                    />
+                    {/* Ruta para UserForm, accesible sin token */}
+                    <Route path="/user-form" element={<UserForm />} />
                 </Routes>
             </div>
         </Router>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { createUser, updateUser } from '../../services/UserService';
 import './UserForm.css'; // Importamos el archivo CSS
 
@@ -6,6 +7,7 @@ const UserForm = ({ user }) => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate(); // Inicializamos useNavigate
 
     useEffect(() => {
         if (user) {
@@ -23,6 +25,7 @@ const UserForm = ({ user }) => {
             await updateUser(user.id, userData);
         } else {
             await createUser(userData);
+            navigate('/'); // Redirigir a la página principal después de crear el usuario
         }
 
         setName('');
